@@ -39,7 +39,7 @@ function create_monster_list(cr, count, monster_list) {
         var monster_name = monster["name"];
         var book = monster["sources"];
         var page = monster["Page"];
-        var section = monster["section"];
+        //var section = monster["section"];
         var output = "" + monster_name + " (" + book + " pg. " + page;
         //console.log(section);
         //if (section.length !== 0) {
