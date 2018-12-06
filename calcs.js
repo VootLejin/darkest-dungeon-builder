@@ -116,6 +116,17 @@ function calcdungeon(){
         var highest = find_highest(current_exp, xpval);
         // get the cr and xp value
         var index = Math.floor(Math.random() * highest);
+        // no more 1/8's
+        if (index == 0){
+            index = 1;
+        }
+        // Shorten List a bit more
+        if (index == 1){
+            if (current_exp > xpval[index] * 2){
+                index = 2;
+            }
+        }
+        
         // check that the cr already exists, if not make it
         if (enemies[crs[index].toString()]  == null){
             enemies[crs[index].toString()] = 0;
