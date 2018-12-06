@@ -120,6 +120,12 @@ function calcdungeon(){
         if (index == 0){
             index = 1;
         }
+        // Shorten List a bit more
+        if (index == 1){
+            if (current_exp > xpval[index] * 2){
+                index = 2;
+            }
+        }
         
         // check that the cr already exists, if not make it
         if (enemies[crs[index].toString()]  == null){
