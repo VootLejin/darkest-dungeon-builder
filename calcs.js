@@ -100,6 +100,12 @@ function find_highest(current_exp, xpval) {
     return index;
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function calcdungeon(){
     var playercount = document.getElementById("playercount").value;
     var level = document.getElementById("level").value;
@@ -115,13 +121,13 @@ function calcdungeon(){
         // find highest cr
         var highest = find_highest(current_exp, xpval);
         // get the cr and xp value
-        var index = Math.floor(Math.random() * highest);
+        var index = getRandomInt(0, highest);
         // no more 1/8's
-        if (index == 0){
+        if (index === 0){
             index = 1;
         }
         // Shorten List a bit more
-        if (index == 1){
+        if (index === 1){
             if (current_exp > xpval[index] * 2){
                 index = 2;
             }
